@@ -7,6 +7,24 @@ function combine(str1, str2, str3) {
   // combine("abc", "12345", "") == "a1b2c345"
   // combine("abc", "12345", "67") == "a16b27c345"
   // Tu código:
+
+  let strMayorArr = [str1.length, str2.length, str3.length]
+  let strMayor = strMayorArr[strMayorArr.indexOf(strMayorArr.reduce((max, n) => n > max ? n : max))]
+
+  let combinada = ""
+
+  for (let index = 0; index < strMayor; index++) {
+    if (str1[index] != undefined) {
+      combinada += str1[index]
+    }
+    if (str2[index] != undefined) {
+      combinada += str2[index]
+    }
+    if (str3[index] != undefined) {
+      combinada += str3[index]
+    }
+  }
+  return combinada
 }
 
 module.exports = combine;
